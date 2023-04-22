@@ -12,6 +12,9 @@ import System.Clock qualified as SC
 scEpochInUTC :: DT.UTCTime
 scEpochInUTC = DT.zonedTimeToUTC $ fromJust $ RFC3339.parseTimeRFC3339 "1970-01-01T00:00:00.00Z"
 
+{- NB: This code assumes an SC.Realtime clock. If a different clock is used,
+   it needs to be converted differently.
+    -}
 main :: IO ()
 main = do
     let
